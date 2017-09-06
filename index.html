@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/boca.js"></script>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0" />﻿
+    <title>Pikachu -- Canvas</title>
+    <script type="text/javascript">
+      function comenzar() {
+        var pikachu=document.getElementById('lienzo');
+        dibujo=pikachu.getContext('2d');
+        /* MEH MEH MEH
+        var imagen=new Image();
+        imagen.src="http://i.imgur.com/gICFQHs.png";
+
+        imagen.addEventListener("load", function(){dibujo.drawImage(imagen,0,0)},false);
+        MEH MEH MEH */
+        window.addEventListener("mousemove",animacion,false);
+
+		    function animacion(e){
+          dibujo.clearRect(0,0,300,300);
+          var xcursor=e.clientX;
+          var ycursor=e.clientY;
+          var xcentro=680;
+          var ycentro=134.5;
+          var angulo=Math.atan2(xcursor-xcentro,ycursor-ycentro-100);
+          var x=xcentro+(Math.sin(angulo)*5);
+          var y=ycentro+(Math.cos(angulo)*5);
+          dibujo.beginPath();
+          dibujo.arc(xcentro-547.5,ycentro,11.4,Math.PI*2,false);
+          dibujo.moveTo(200,134.5);
+          dibujo.arc(200,ycentro+0.5,11,Math.PI*2,false);
+          dibujo.fillStyle="black";
+      		dibujo.fill();
+          dibujo.beginPath();
+          dibujo.arc(x-547.5,y,5,Math.PI*2,false);
+          dibujo.moveTo(x,y);
+          dibujo.arc(x-480,y,4.5,Math.PI*2,false);
+          dibujo.fillStyle="white";
+          dibujo.fill();
+        }
+
+		/* ÑEH ÑEH ÑEH
+        dibujo.beginPath();
+        dibujo.moveTo(0,42);
+        dibujo.quadraticCurveTo(1,80,7,116);
+        dibujo.quadraticCurveTo(39,125,64,138);
+        dibujo.quadraticCurveTo(57,148,51,159);
+        dibujo.quadraticCurveTo(62,164,70,171);
+        dibujo.quadraticCurveTo(63,177,58,185);
+        dibujo.quadraticCurveTo(67,192,74,197);
+        dibujo.quadraticCurveTo(71,202,68,211);
+        dibujo.quadraticCurveTo(69,212,71,213);
+        dibujo.quadraticCurveTo(82,202,87,192);
+        dibujo.quadraticCurveTo(82,188,78,183);
+        dibujo.quadraticCurveTo(84,173,95,164);
+        dibujo.quadraticCurveTo(89,156,78,150);
+        dibujo.quadraticCurveTo(90,130,104,122);
+        dibujo.quadraticCurveTo(104,117,106,116);
+        dibujo.quadraticCurveTo(104,106,104,98);
+        dibujo.quadraticCurveTo(65,71,0,42);
+        dibujo.fillStyle="#fedc47";
+        dibujo.fill();
+        dibujo.stroke();
+        dibujo.closePath();
+
+        dibujo.beginPath();
+        dibujo.quadraticCurveTo(1,53,2,68);
+        dibujo.quadraticCurveTo(37,104,96,93);
+        dibujo.quadraticCurveTo(65,71,0,42);
+        dibujo.fillStyle="rgba(255, 255, 255, 0.62)";
+        dibujo.fill();
+        dibujo.closePath();
+
+        dibujo.beginPath();
+        dibujo.moveTo(5,93);
+        dibujo.quadraticCurveTo(42,106,78,129);
+        dibujo.quadraticCurveTo(73,141,65,152);
+        dibujo.quadraticCurveTo(76,160,89,170);
+        dibujo.quadraticCurveTo(82,176,77,183);
+        dibujo.quadraticCurveTo(79,185,80,186);
+        dibujo.quadraticCurveTo(75,189,70,193);
+        dibujo.quadraticCurveTo(64,190,60,185);
+        dibujo.quadraticCurveTo(63,177,71,170);
+        dibujo.quadraticCurveTo(63,165,52,159);
+        dibujo.quadraticCurveTo(57,149,66,137);
+        dibujo.quadraticCurveTo(37,125,8,115);
+        dibujo.quadraticCurveTo(5,104,5,93);
+        dibujo.fillStyle="rgba(140, 98, 56, 0.28)";
+        dibujo.fill();
+        dibujo.closePath();
+
+        dibujo.beginPath();
+        dibujo.moveTo(70,193);
+        dibujo.quadraticCurveTo(73,195,75,197);
+        dibujo.quadraticCurveTo(71,203,69,210);
+        dibujo.quadraticCurveTo(70,211,71,212);
+        dibujo.quadraticCurveTo(81,202,87,193);
+        dibujo.quadraticCurveTo(84,188,80,186);
+        dibujo.quadraticCurveTo(75,189,70,193);
+        dibujo.fillStyle="#8c6238";
+        dibujo.fill();
+        dibujo.closePath();
+
+        dibujo.beginPath();
+        dibujo.arc(97,245.1,40.5,60.2,70,true);
+        dibujo.quadraticCurveTo(103,256,102,233);
+        dibujo.quadraticCurveTo(85,218,78,220);
+        dibujo.quadraticCurveTo(64,203,61,225);
+        dibujo.fillStyle="#ebb435";
+        dibujo.fill();
+        dibujo.stroke();
+        dibujo.closePath();
+
+        dibujo.beginPath();
+        dibujo.moveTo(89,253);
+        dibujo.bezierCurveTo(50,134,54,317,90,267);
+        dibujo.stroke();
+        dibujo.closePath();
+
+        dibujo.beginPath();
+        dibujo.moveTo(88,255);
+        dibujo.quadraticCurveTo(65,187,63,233);
+        dibujo.quadraticCurveTo(69,218,88,255);
+        dibujo.fillStyle="rgba(255, 255, 255, 0.62)";
+        dibujo.fill();
+        dibujo.closePath();
+
+        dibujo.beginPath();
+        dibujo.moveTo(72,212);
+        dibujo.quadraticCurveTo(70,224,75,235);
+        dibujo.moveTo(66.5,212);
+        dibujo.quadraticCurveTo(64,221,67,233);
+        dibujo.stroke();
+        dibujo.closePath();
+
+        dibujo.beginPath();
+        dibujo.moveTo(71,213);
+        dibujo.quadraticCurveTo(82,207,94,214);
+        dibujo.moveTo(71,213);
+        dibujo.quadraticCurveTo(89,195,99,172);
+        dibujo.quadraticCurveTo(95,136,106,116);
+        dibujo.quadraticCurveTo(100,49,126,7);
+        dibujo.quadraticCurveTo(138,59,125,106);
+        dibujo.moveTo(127,100);
+        dibujo.quadraticCurveTo(161,85,194,99);
+        dibujo.moveTo(190,97);
+        dibujo.quadraticCurveTo(241,91,298,115);
+        dibujo.quadraticCurveTo(249,127,211,118);
+        dibujo.moveTo(203,106);
+        dibujo.bezierCurveTo(215,120,215,144,222,151);
+        dibujo.quadraticCurveTo(223,178,190,207);
+        dibujo.moveTo(199,199);
+        dibujo.quadraticCurveTo(202,249,173,285);
+        dibujo.quadraticCurveTo(174,286,174,288);
+        dibujo.quadraticCurveTo(172,288,170,287);
+        dibujo.quadraticCurveTo(170,289,169,291);
+        dibujo.quadraticCurveTo(167,290,166,288);
+        dibujo.quadraticCurveTo(165,286,164,291);
+        dibujo.quadraticCurveTo(158,287,160,287);
+        dibujo.quadraticCurveTo(155,289,157,289);
+        dibujo.quadraticCurveTo(155,286,154,286);
+        dibujo.quadraticCurveTo(153,286,152,287);
+        dibujo.quadraticCurveTo(149,250,160,228);
+        dibujo.moveTo(151,280);
+        dibujo.quadraticCurveTo(148,279,143,279);
+        dibujo.moveTo(138,228);
+        dibujo.quadraticCurveTo(150,255,142,280);
+        dibujo.quadraticCurveTo(142,282,143,283);
+        dibujo.quadraticCurveTo(140,283,140,286);
+        dibujo.quadraticCurveTo(138,283,137,285);
+        dibujo.quadraticCurveTo(133,283,136,287.5);
+        dibujo.quadraticCurveTo(132,285,130,286);
+        dibujo.quadraticCurveTo(129,285,129,288);
+        dibujo.quadraticCurveTo(129,281,129,284);
+        dibujo.quadraticCurveTo(92,243,103,206);
+        dibujo.fillStyle="#fedc47";
+        dibujo.fill();
+        dibujo.stroke();
+        dibujo.closePath();
+
+        dibujo.beginPath();
+        dibujo.rect(107,100,95,50);
+        dibujo.rect(105,120,100,50);
+        dibujo.rect(105,150,90,50);
+        dibujo.rect(105,170,86,58);
+        dibujo.fillStyle="#fedc47";
+        dibujo.fill();
+        dibujo.closePath();
+        ÑEH ÑEH ÑEH */
+      }
+      window.addEventListener("load",comenzar,false);
+    </script>
+  </head>
+  <body>
+    <h1><span class="black">P</span><span class="yellow">i</span><span class="black">k</span><span class="yellow">a</span><span class="black">c</span><span class="yellow">h</span><span class="black">u</span> <span class="small">canvas :D</span></h1>
+    <div class="bayas">
+      <img id="drag1" src="img/BayaPerasi.png" draggable="true" ondragstart="drag(event)" alt="😥">
+      <img id="drag2" src="img/BayaAranja.png" draggable="true" ondragstart="drag(event)" alt="😥">
+      <img id="drag3" src="img/BayaZreza.png" draggable="true" ondragstart="drag(event)" alt="😥">
+      <img id="drag4" src="img/BayaAtania.png" draggable="true" ondragstart="drag(event)" alt="😥">
+      <img id="drag5" src="img/BayaSafre.png" draggable="true" ondragstart="drag(event)" alt="😥">
+    </div>
+    <div class="canvas">
+      <canvas id="lienzo" width="300" height="300">Tu navegador no puede mostrar este contenido.</canvas>
+    </div>
+    <div id="boca" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <div class="ojo izq"></div>
+      <div class="ojo der"></div>
+    </div>
+    <h2>Para visualizar este contenido utiliza un dispositivo más grande.</h2>
+  </body>
+</html>

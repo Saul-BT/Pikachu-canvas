@@ -1,0 +1,105 @@
+h1 {
+  text-align: center;
+  font-family: calibri;
+  background-color: #212121;
+  border-radius: 8px;
+  margin-top: 0;
+}
+
+h1 > span.yellow {
+  color: #FFD600;
+  vertical-align: 1px;
+}
+
+h1 > span.black {
+  color: #616161;
+  vertical-align: -1px;
+}
+
+h1 > span.small {
+  font-weight: 500;
+  font-size: 20px;
+  color: #424242;
+}
+
+div.canvas {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin-left: 500px;
+}
+
+body > h2 {
+  font-family: calibri;
+  visibility: hidden;
+}
+
+body > div.bayas {
+  position: absolute;
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body > div.bayas > img {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+div#boca {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  top: 210px;
+  left: 623px;
+  width: 100px;
+  height: 110px;
+}
+
+/*
+div#boca > div.ojo {
+  height: 25px;
+  width: 25px;
+  background-color: #fedc47;
+  border-radius: 50%;
+  border-top: 3px solid black;
+  visibility: hidden;
+}
+
+div#boca > div.izq {
+  margin: 0px 40px 0px 6px;
+}
+*/
+
+div#boca > img {
+  display: none;
+}
+
+canvas#lienzo {
+  background-image: url("img/pikachu.png");
+}
+
+@media screen and (max-width: 833px) {
+  div.canvas > canvas, body > div.bayas, div#boca {
+    display: none;
+  }
+  body > h2 {
+    visibility: visible;
+  }
+}
