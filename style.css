@@ -95,6 +95,10 @@ canvas#lienzo {
   background-image: url("img/pikachu.png");
 }
 
+img[alt="LOL D:"] {
+  display: none;
+}
+
 a[target="_blank"] {
   position: fixed;
   bottom: 0;
