@@ -95,8 +95,14 @@ canvas#lienzo {
   background-image: url("img/pikachu.png");
 }
 
+a[target="_blank"] {
+  position: fixed;
+  bottom: 0;
+  right: 8px;
+}
+
 @media screen and (max-width: 833px) {
-  div.canvas > canvas, body > div.bayas, div#boca {
+  div.canvas, body > div.bayas, div#boca {
     display: none;
   }
   body > h2 {
